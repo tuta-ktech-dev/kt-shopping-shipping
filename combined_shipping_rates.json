@@ -1,0 +1,580 @@
+{
+  "shipping_rates": [
+    {
+      "weight_kg": 0.1,
+      "hong_kong": 7500,
+      "taiwan": 5500,
+      "singapore": 5000,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 0.2,
+      "hong_kong": 8300,
+      "taiwan": 6400,
+      "singapore": 6000,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 0.3,
+      "hong_kong": 9000,
+      "taiwan": 7300,
+      "singapore": 7000,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 0.4,
+      "hong_kong": 9800,
+      "taiwan": 8200,
+      "singapore": 7700,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 0.5,
+      "hong_kong": 10500,
+      "taiwan": 9100,
+      "singapore": 8700,
+      "united_states": 19000,
+      "japan": 8100
+    },
+    {
+      "weight_kg": 0.6,
+      "hong_kong": 11300,
+      "taiwan": 10000,
+      "singapore": 9700,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 0.7,
+      "hong_kong": 12000,
+      "taiwan": 10900,
+      "singapore": 10300,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 0.8,
+      "hong_kong": 12800,
+      "taiwan": 11800,
+      "singapore": 11200,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 0.9,
+      "hong_kong": 13500,
+      "taiwan": 12700,
+      "singapore": 12200,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 1.0,
+      "hong_kong": 14300,
+      "taiwan": 13400,
+      "singapore": 13400,
+      "united_states": 22800,
+      "japan": 10200
+    },
+    {
+      "weight_kg": 1.1,
+      "hong_kong": 15000,
+      "taiwan": 14300,
+      "singapore": 13800,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 1.2,
+      "hong_kong": 15800,
+      "taiwan": 15200,
+      "singapore": 14700,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 1.3,
+      "hong_kong": 16500,
+      "taiwan": 16100,
+      "singapore": 15600,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 1.4,
+      "hong_kong": 17300,
+      "taiwan": 16600,
+      "singapore": 16500,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 1.5,
+      "hong_kong": 18000,
+      "taiwan": 17500,
+      "singapore": 17500,
+      "united_states": 26700,
+      "japan": 12300
+    },
+    {
+      "weight_kg": 1.6,
+      "hong_kong": 18800,
+      "taiwan": 18400,
+      "singapore": 17700,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 1.7,
+      "hong_kong": 19500,
+      "taiwan": 19200,
+      "singapore": 18600,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 1.8,
+      "hong_kong": 20300,
+      "taiwan": 20100,
+      "singapore": 19500,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 1.9,
+      "hong_kong": 21000,
+      "taiwan": 21000,
+      "singapore": 20400,
+      "united_states": null,
+      "japan": null
+    },
+    {
+      "weight_kg": 2.0,
+      "hong_kong": 21800,
+      "taiwan": 21800,
+      "singapore": 21500,
+      "united_states": 30600,
+      "japan": 14400
+    },
+    {
+      "weight_kg": 2.5,
+      "hong_kong": 25500,
+      "taiwan": 26200,
+      "singapore": 25900,
+      "united_states": 35800,
+      "japan": 17600
+    },
+    {
+      "weight_kg": 3.0,
+      "hong_kong": 29300,
+      "taiwan": 30600,
+      "singapore": 30500,
+      "united_states": 39700,
+      "japan": 19800
+    },
+    {
+      "weight_kg": 3.5,
+      "hong_kong": 33000,
+      "taiwan": 34900,
+      "singapore": 35000,
+      "united_states": 43600,
+      "japan": 21900
+    },
+    {
+      "weight_kg": 4.0,
+      "hong_kong": 36800,
+      "taiwan": 39300,
+      "singapore": 39600,
+      "united_states": 47500,
+      "japan": 24000
+    },
+    {
+      "weight_kg": 4.5,
+      "hong_kong": 41800,
+      "taiwan": 43700,
+      "singapore": 44000,
+      "united_states": 52800,
+      "japan": 26100
+    },
+    {
+      "weight_kg": 5.0,
+      "hong_kong": 45600,
+      "taiwan": 48000,
+      "singapore": 48700,
+      "united_states": 56700,
+      "japan": 28200
+    },
+    {
+      "weight_kg": 5.5,
+      "hong_kong": 49300,
+      "taiwan": 52400,
+      "singapore": 53100,
+      "united_states": 60600,
+      "japan": 31800
+    },
+    {
+      "weight_kg": 6.0,
+      "hong_kong": 53100,
+      "taiwan": 56800,
+      "singapore": 57700,
+      "united_states": 64500,
+      "japan": 33900
+    },
+    {
+      "weight_kg": 6.5,
+      "hong_kong": 56800,
+      "taiwan": 61100,
+      "singapore": 62100,
+      "united_states": 68300,
+      "japan": 36100
+    },
+    {
+      "weight_kg": 7.0,
+      "hong_kong": 60600,
+      "taiwan": 65500,
+      "singapore": 66800,
+      "united_states": 73300,
+      "japan": 38200
+    },
+    {
+      "weight_kg": 7.5,
+      "hong_kong": 66900,
+      "taiwan": 69900,
+      "singapore": 71200,
+      "united_states": 77200,
+      "japan": 40300
+    },
+    {
+      "weight_kg": 8.0,
+      "hong_kong": 70600,
+      "taiwan": 74300,
+      "singapore": 75800,
+      "united_states": 81100,
+      "japan": 42400
+    },
+    {
+      "weight_kg": 8.5,
+      "hong_kong": 74400,
+      "taiwan": 78600,
+      "singapore": 80200,
+      "united_states": 85000,
+      "japan": 44500
+    },
+    {
+      "weight_kg": 9.0,
+      "hong_kong": 78100,
+      "taiwan": 83000,
+      "singapore": 84900,
+      "united_states": 89900,
+      "japan": 46700
+    },
+    {
+      "weight_kg": 9.5,
+      "hong_kong": 81900,
+      "taiwan": 87300,
+      "singapore": 89300,
+      "united_states": 93800,
+      "japan": 48800
+    },
+    {
+      "weight_kg": 10.0,
+      "hong_kong": 85600,
+      "taiwan": 91700,
+      "singapore": 93900,
+      "united_states": 97700,
+      "japan": 50900
+    },
+    {
+      "weight_kg": 10.5,
+      "hong_kong": 93400,
+      "taiwan": 96800,
+      "singapore": 98300,
+      "united_states": 101600,
+      "japan": 56800
+    },
+    {
+      "weight_kg": 11.0,
+      "hong_kong": 97200,
+      "taiwan": 101200,
+      "singapore": 103000,
+      "united_states": 105400,
+      "japan": 58900
+    },
+    {
+      "weight_kg": 11.5,
+      "hong_kong": 101000,
+      "taiwan": 105600,
+      "singapore": 107400,
+      "united_states": 109300,
+      "japan": 61100
+    },
+    {
+      "weight_kg": 12.0,
+      "hong_kong": 104800,
+      "taiwan": 110000,
+      "singapore": 112000,
+      "united_states": 113200,
+      "japan": 63200
+    },
+    {
+      "weight_kg": 12.5,
+      "hong_kong": 108500,
+      "taiwan": 114400,
+      "singapore": 116400,
+      "united_states": 117100,
+      "japan": 65300
+    },
+    {
+      "weight_kg": 13.0,
+      "hong_kong": 112300,
+      "taiwan": 118700,
+      "singapore": 121100,
+      "united_states": 121000,
+      "japan": 67400
+    },
+    {
+      "weight_kg": 13.5,
+      "hong_kong": 116100,
+      "taiwan": 123200,
+      "singapore": 125500,
+      "united_states": 125600,
+      "japan": 69500
+    },
+    {
+      "weight_kg": 14.0,
+      "hong_kong": 119900,
+      "taiwan": 127600,
+      "singapore": 130100,
+      "united_states": 129500,
+      "japan": 71700
+    },
+    {
+      "weight_kg": 14.5,
+      "hong_kong": 123700,
+      "taiwan": 131900,
+      "singapore": 134600,
+      "united_states": 133400,
+      "japan": 73800
+    },
+    {
+      "weight_kg": 15.0,
+      "hong_kong": 127400,
+      "taiwan": 136300,
+      "singapore": 139200,
+      "united_states": 137200,
+      "japan": 75900
+    },
+    {
+      "weight_kg": 15.5,
+      "hong_kong": 132500,
+      "taiwan": 140700,
+      "singapore": 143600,
+      "united_states": 141100,
+      "japan": 78000
+    },
+    {
+      "weight_kg": 16.0,
+      "hong_kong": 136300,
+      "taiwan": 145100,
+      "singapore": 148200,
+      "united_states": 145800,
+      "japan": 80100
+    },
+    {
+      "weight_kg": 16.5,
+      "hong_kong": 141300,
+      "taiwan": 149500,
+      "singapore": 152700,
+      "united_states": 149700,
+      "japan": 82300
+    },
+    {
+      "weight_kg": 17.0,
+      "hong_kong": 145100,
+      "taiwan": 153900,
+      "singapore": 157300,
+      "united_states": 153600,
+      "japan": 84400
+    },
+    {
+      "weight_kg": 17.5,
+      "hong_kong": 150200,
+      "taiwan": 158300,
+      "singapore": 161700,
+      "united_states": 157500,
+      "japan": 86500
+    },
+    {
+      "weight_kg": 18.0,
+      "hong_kong": 153900,
+      "taiwan": 162700,
+      "singapore": 166400,
+      "united_states": 162400,
+      "japan": 88600
+    },
+    {
+      "weight_kg": 18.5,
+      "hong_kong": 159000,
+      "taiwan": 167100,
+      "singapore": 170800,
+      "united_states": 166300,
+      "japan": 90700
+    },
+    {
+      "weight_kg": 19.0,
+      "hong_kong": 162800,
+      "taiwan": 171500,
+      "singapore": 175400,
+      "united_states": 170200,
+      "japan": 92800
+    },
+    {
+      "weight_kg": 19.5,
+      "hong_kong": 167800,
+      "taiwan": 175900,
+      "singapore": 179800,
+      "united_states": 174000,
+      "japan": 95000
+    },
+    {
+      "weight_kg": 20.0,
+      "hong_kong": 171600,
+      "taiwan": 180300,
+      "singapore": 184500,
+      "united_states": 177900,
+      "japan": 97100
+    },
+    {
+      "weight_kg": 20.5,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 200900,
+      "japan": null
+    },
+    {
+      "weight_kg": 21.0,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 204800,
+      "japan": null
+    },
+    {
+      "weight_kg": 21.5,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 208700,
+      "japan": null
+    },
+    {
+      "weight_kg": 22.0,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 212600,
+      "japan": null
+    },
+    {
+      "weight_kg": 22.5,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 219000,
+      "japan": null
+    },
+    {
+      "weight_kg": 23.0,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 222900,
+      "japan": null
+    },
+    {
+      "weight_kg": 23.5,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 226800,
+      "japan": null
+    },
+    {
+      "weight_kg": 24.0,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 230700,
+      "japan": null
+    },
+    {
+      "weight_kg": 24.5,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 234600,
+      "japan": null
+    },
+    {
+      "weight_kg": 25.0,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 240400,
+      "japan": null
+    },
+    {
+      "weight_kg": 25.5,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 244300,
+      "japan": null
+    },
+    {
+      "weight_kg": 26.0,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 248200,
+      "japan": null
+    },
+    {
+      "weight_kg": 26.5,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 252000,
+      "japan": null
+    },
+    {
+      "weight_kg": 27.0,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 258000,
+      "japan": null
+    },
+    {
+      "weight_kg": 27.5,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 261900,
+      "japan": null
+    },
+    {
+      "weight_kg": 28.0,
+      "hong_kong": null,
+      "taiwan": null,
+      "singapore": null,
+      "united_states": 265700,
+      "japan": null
+    }
+  ]
+}
