@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Cửa Hàng Online</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-icon {
+            width: 20px;
+            height: 20px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            cursor: help;
+            position: relative;
+        }
+
+        .tooltip {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #34495e;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            width: 300px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-icon:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .image-upload {
+            border: 2px dashed #3498db;
+            padding: 30px;
+            text-align: center;
+            border-radius: 5px;
+            background: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .image-upload:hover {
+            background: #e3f2fd;
+            border-color: #2980b9;
+        }
+
+        .phone-otp {
+            display: flex;
+            gap: 10px;
+        }
+
+        .phone-otp input {
+            flex: 1;
+        }
+
+        .otp-button {
+            padding: 12px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .otp-button:hover {
+            background: #2980b9;
+        }
+
+        .time-range {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .time-input {
+            width: 120px;
+        }
+
+        .director-list {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background: #f8f9fa;
+        }
+
+        .director-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .add-director {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .remove-director {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-back {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .btn-back:hover {
+            background: #7f8c8d;
+        }
+
+        .btn-continue {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-continue:hover {
+            background: #2980b9;
+        }
+
+        .btn-continue:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .license-guide {
+            background: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .license-guide h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step {
+            background: white;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+        }
+
+        .step-number {
+            background: #3498db;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .download-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .download-btn:hover {
+            background: #229954;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .phone-otp {
+                flex-direction: column;
+            }
+
+            .time-range {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .form-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛒 Đăng Ký Cửa Hàng Online</h1>
+            <p>Vui lòng điền đầy đủ thông tin để đăng ký cửa hàng online của bạn</p>
+        </div>
+
+        <div class="form-container">
+            <!-- Hướng dẫn đăng ký Giấy phép kinh doanh online -->
+            <div class="license-guide">
+                <h3>
+                    📋 Hướng dẫn đăng ký Giấy phép kinh doanh online
+                    <div class="info-icon" title="Hướng dẫn đăng ký">💡
+                        <div class="tooltip">
+                            Quy trình 2 bước để đăng ký Giấy phép kinh doanh online theo quy định của Hàn Quốc
+                        </div>
+                    </div>
+                </h3>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <strong>Tải về "Giấy xác nhận sử dụng dịch vụ bảo đảm mua hàng"</strong>
+                    <p style="margin: 10px 0; color: #666;">Admin sẽ cấp giấy này cho seller dựa trên thông tin từ giai
+                        đoạn 1</p>
+                    <button type="button" class="download-btn">📥 Tải giấy xác nhận</button>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <strong>Đăng ký Giấy phép kinh doanh online</strong>
+                    <p style="margin: 10px 0; color: #666;">Cầm theo giấy ở bước 1, đến Ủy ban nhân dân quận/huyện/thành
+                        phố quản lý để xin Giấy phép kinh doanh online</p>
+                    <p style="margin: 5px 0; font-size: 12px; color: #888;">
+                        <strong>Giấy tờ cần thiết:</strong> Giấy xác nhận từ bước 1, CMND/CCCD, Giấy phép kinh doanh
+                        (nếu có)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Thông tin cá nhân -->
+            <div class="form-section">
+                <div class="section-title">
+                    👤 Thông tin cá nhân
+                    <div class="info-icon" title="Thông tin cá nhân">💡
+                        <div class="tooltip">
+                            Phần này yêu cầu thông tin cá nhân của chủ cửa hàng online bao gồm tên, email và số điện
+                            thoại (có xác thực OTP)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Tên cá nhân <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="Ví dụ: Nguyễn Văn A" maxlength="100">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email <span class="required">*</span></label>
+                    <input type="email" class="form-input" placeholder="shop@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Số điện thoại <span class="required">*</span></label>
+                    <div class="phone-otp">
+                        <input type="text" class="form-input" placeholder="010-1234-5678" maxlength="13">
+                        <button type="button" class="otp-button">Gửi OTP</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thông tin cửa hàng -->
+            <div class="form-section">
+                <div class="section-title">
+                    🏪 Thông tin cửa hàng online
+                    <div class="info-icon" title="Thông tin cửa hàng">💡
+                        <div class="tooltip">
+                            Thông tin về cửa hàng online bao gồm tên, logo, ảnh thực tế, website và giới thiệu
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Tên cửa hàng/Công ty <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="Ví dụ: Hoa Bằng Online Shop" maxlength="100">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Logo cửa hàng <span class="required">*</span></label>
+                    <div class="image-upload">
+                        <p>📷 Click để tải logo (tối đa 1 ảnh)</p>
+                        <p style="font-size: 12px; color: #666;">Định dạng: JPG, PNG</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Ảnh thực tế cửa hàng <span class="required">*</span></label>
+                    <div class="image-upload">
+                        <p>📷 Click để tải ảnh thực tế (tối đa 10 ảnh)</p>
+                        <p style="font-size: 12px; color: #666;">Định dạng: JPG, PNG</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Website <span class="required">*</span></label>
+                    <input type="url" class="form-input" placeholder="https://example.com">
+                    <small style="color: #666; font-size: 12px;">Cửa hàng online bắt buộc phải có website</small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Giới thiệu cửa hàng <span class="required">*</span></label>
+                    <textarea class="form-textarea"
+                        placeholder="Ví dụ: Shop online chuyên bán hoa tươi, thiết kế theo yêu cầu"
+                        maxlength="200"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Giờ hoạt động</label>
+                    <div class="time-range">
+                        <input type="time" class="form-input time-input" value="00:00">
+                        <span>đến</span>
+                        <input type="time" class="form-input time-input" value="23:59">
+                    </div>
+                    <small style="color: #666; font-size: 12px;">Mặc định 24/7 cho cửa hàng online</small>
+                </div>
+            </div>
+
+            <!-- Thông tin kinh doanh -->
+            <div class="form-section">
+                <div class="section-title">
+                    💼 Thông tin kinh doanh
+                    <div class="info-icon" title="Thông tin kinh doanh">💡
+                        <div class="tooltip">
+                            Thông tin về loại hình kinh doanh, số đăng ký kinh doanh và tên giám đốc
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Loại hình kinh doanh <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" name="business-type" id="brand-owner">
+                            <label for="brand-owner">Chủ thương hiệu</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="business-type" id="manufacturer">
+                            <label for="manufacturer">Nhà sản xuất</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="business-type" id="consignment">
+                            <label for="consignment">Bán hàng ký gửi</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="business-type" id="retail-import">
+                            <label for="retail-import">Bán lẻ hàng nhập khẩu</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="business-type" id="direct-importer">
+                            <label for="direct-importer">Nhập khẩu trực tiếp</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Số đăng ký kinh doanh <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="Nhập số đăng ký kinh doanh">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Tên giám đốc <span class="required">*</span></label>
+                    <div class="director-list">
+                        <div class="director-item">
+                            <input type="text" class="form-input" placeholder="Tên giám đốc">
+                            <button type="button" class="remove-director">Xóa</button>
+                        </div>
+                        <button type="button" class="add-director">+ Thêm giám đốc</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Địa chỉ -->
+            <div class="form-section">
+                <div class="section-title">
+                    📍 Địa chỉ công ty
+                    <div class="info-icon" title="Địa chỉ công ty">💡
+                        <div class="tooltip">
+                            Hệ thống địa chỉ Hàn Quốc sử dụng tên đường (Road Name Address) với format: Số nhà + Tên
+                            đường + Quận + Thành phố + Mã bưu điện. Ví dụ: 12 Sapyeong-daero 58-gil, Seocho-gu, Seoul,
+                            06690
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Số nhà <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="Ví dụ: 12" maxlength="10">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Tên đường <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="Ví dụ: Sapyeong-daero 58-gil" maxlength="100">
+                    <small style="color: #666; font-size: 12px;">
+                        Hậu tố: -daero (đại lộ), -ro (đường), -gil (ngõ)
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Quận (Gu) <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="Ví dụ: Seocho-gu" maxlength="50">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Thành phố (Si) <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="Ví dụ: Seoul" maxlength="50">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Mã bưu điện <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="Ví dụ: 06690" maxlength="5" pattern="[0-9]{5}">
+                    <small style="color: #666; font-size: 12px;">
+                        Mã 5 chữ số (hệ thống 6 chữ số đã lỗi thời)
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Địa chỉ đầy đủ</label>
+                    <div style="padding: 15px; background: #f8f9fa; border-radius: 5px; border: 1px solid #ddd;">
+                        <p style="margin: 0; color: #666; font-size: 14px;">
+                            <strong>Xem trước:</strong> <span id="full-address">Chưa có thông tin</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Giấy phép kinh doanh online -->
+            <div class="form-section">
+                <div class="section-title">
+                    📄 Giấy phép kinh doanh online
+                    <div class="info-icon" title="Giấy phép kinh doanh online">💡
+                        <div class="tooltip">
+                            Giấy phép kinh doanh online khác với giấy phép kinh doanh thông thường, yêu cầu quy trình
+                            đăng ký riêng biệt
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Mã số Giấy phép kinh doanh online <span class="required">*</span></label>
+                    <input type="text" class="form-input" placeholder="Nhập mã số giấy phép kinh doanh online">
+                    <small style="color: #666; font-size: 12px;">Mã số này khác với số đăng ký kinh doanh thông
+                        thường</small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Ảnh Giấy phép kinh doanh online <span class="required">*</span></label>
+                    <div class="image-upload">
+                        <p>📷 Click để tải ảnh giấy phép kinh doanh online (tối đa 1 ảnh)</p>
+                        <p style="font-size: 12px; color: #666;">Định dạng: JPG, PNG</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Điều khoản -->
+            <div class="form-section">
+                <div class="section-title">
+                    ✅ Điều khoản và chính sách
+                    <div class="info-icon" title="Điều khoản và chính sách">💡
+                        <div class="tooltip">
+                            Bạn phải đồng ý với các điều khoản và chính sách để tiếp tục đăng ký
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agree-terms">
+                    <label for="agree-terms">Tôi đồng ý với các <a href="#" style="color: #3498db;">điều khoản</a> và <a
+                            href="#" style="color: #3498db;">chính sách</a> <span class="required">*</span></label>
+                </div>
+            </div>
+
+            <!-- Nút điều hướng -->
+            <div class="form-buttons">
+                <button type="button" class="btn btn-back">← Quay lại</button>
+                <button type="button" class="btn btn-continue" disabled>Tiếp tục →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle tooltip visibility
+        document.querySelectorAll('.info-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', function () {
+                this.querySelector('.tooltip').style.opacity = '1';
+                this.querySelector('.tooltip').style.visibility = 'visible';
+            });
+
+            icon.addEventListener('mouseleave', function () {
+                this.querySelector('.tooltip').style.opacity = '0';
+                this.querySelector('.tooltip').style.visibility = 'hidden';
+            });
+        });
+
+        // Add/remove director functionality
+        document.querySelector('.add-director').addEventListener('click', function () {
+            const directorList = document.querySelector('.director-list');
+            const newDirector = document.createElement('div');
+            newDirector.className = 'director-item';
+            newDirector.innerHTML = `
+                <input type="text" class="form-input" placeholder="Tên giám đốc">
+                <button type="button" class="remove-director">Xóa</button>
+            `;
+            directorList.insertBefore(newDirector, this);
+        });
+
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('remove-director')) {
+                e.target.parentElement.remove();
+            }
+        });
+
+        // Form validation (basic)
+        const requiredFields = document.querySelectorAll('input[required], textarea[required]');
+        const continueBtn = document.querySelector('.btn-continue');
+
+        function validateForm() {
+            let isValid = true;
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                }
+            });
+
+            // Check if terms are agreed
+            const termsCheckbox = document.getElementById('agree-terms');
+            if (!termsCheckbox.checked) {
+                isValid = false;
+            }
+
+            continueBtn.disabled = !isValid;
+        }
+
+        // Add event listeners for form validation
+        document.addEventListener('input', validateForm);
+        document.getElementById('agree-terms').addEventListener('change', validateForm);
+
+        // Address preview functionality
+        const addressInputs = document.querySelectorAll('input[placeholder*="Ví dụ: 12"], input[placeholder*="Ví dụ: Sapyeong"], input[placeholder*="Ví dụ: Seocho"], input[placeholder*="Ví dụ: Seoul"], input[placeholder*="Ví dụ: 06690"]');
+        const fullAddressSpan = document.getElementById('full-address');
+
+        function updateFullAddress() {
+            const houseNumber = document.querySelector('input[placeholder*="Ví dụ: 12"]').value;
+            const streetName = document.querySelector('input[placeholder*="Ví dụ: Sapyeong"]').value;
+            const district = document.querySelector('input[placeholder*="Ví dụ: Seocho"]').value;
+            const city = document.querySelector('input[placeholder*="Ví dụ: Seoul"]').value;
+            const postalCode = document.querySelector('input[placeholder*="Ví dụ: 06690"]').value;
+
+            if (houseNumber || streetName || district || city || postalCode) {
+                const addressParts = [];
+                if (houseNumber) addressParts.push(houseNumber);
+                if (streetName) addressParts.push(streetName);
+                if (district) addressParts.push(district);
+                if (city) addressParts.push(city);
+                if (postalCode) addressParts.push(postalCode);
+
+                fullAddressSpan.textContent = addressParts.join(', ');
+            } else {
+                fullAddressSpan.textContent = 'Chưa có thông tin';
+            }
+        }
+
+        // Add event listeners for address inputs
+        addressInputs.forEach(input => {
+            input.addEventListener('input', updateFullAddress);
+        });
+
+        // Postal code validation
+        const postalCodeInput = document.querySelector('input[placeholder*="Ví dụ: 06690"]');
+        postalCodeInput.addEventListener('input', function () {
+            const value = this.value;
+            if (value && !/^\d{5}$/.test(value)) {
+                this.style.borderColor = '#e74c3c';
+            } else {
+                this.style.borderColor = '#ddd';
+            }
+        });
+
+        // Download button functionality
+        document.querySelector('.download-btn').addEventListener('click', function () {
+            alert('Tính năng tải giấy xác nhận sẽ được tích hợp với hệ thống admin');
+        });
+    </script>
+</body>
+
+</html>
